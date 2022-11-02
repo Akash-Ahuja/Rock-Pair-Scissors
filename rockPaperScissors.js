@@ -1,6 +1,6 @@
 const getUserChoice = userInput => {
   userInput = userInput.toLowerCase();
-  if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' || userInput === 'bomb') {
+  if (userInput === 'stone' || userInput === 'paper' || userInput === 'scissors' || userInput === 'rock') {
     return userInput;
   } else {
     console.log('ERROR 404!');
@@ -13,7 +13,7 @@ function getComputerChoice(){
   randomNumber = Math.floor(Math.random()*3);
   switch (randomNumber){
     case 0:
-    return 'rock';
+    return 'stone';
     break;
 
     case 1:
@@ -32,7 +32,7 @@ function getComputerChoice(){
 
 function determineWinner(userChoice, computerChoice) {
 
-  if(userChoice === 'bomb'){
+  if(userChoice === 'rock'){
     return 'The user wins for sure this time!';
   }
 
@@ -40,7 +40,7 @@ function determineWinner(userChoice, computerChoice) {
     return 'The game is a tie!';
   }
 
-  if(userChoice === 'rock'){
+  if(userChoice === 'stone'){
     if(computerChoice === 'paper'){
       return 'The computer won!';
     } else {
@@ -57,7 +57,7 @@ function determineWinner(userChoice, computerChoice) {
   } 
 
   if(userChoice === 'scissors'){
-    if(computerChoice === 'rock'){
+    if(computerChoice === 'stone'){
       return 'The computer won finally!';
     } else {
       return 'The user won all 3 games!';
@@ -65,7 +65,7 @@ function determineWinner(userChoice, computerChoice) {
   }
 
   function playGame(){
-    const userChoice = getUserChoice('rock');
+    const userChoice = getUserChoice('stone');
     const computerChoice = getComputerChoice();
     console.log('The user showed ' + userChoice);
     console.log('The computer showed ' + computerChoice);
